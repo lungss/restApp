@@ -42,7 +42,7 @@ public class DemoRoute extends RouteBuilder {
         }).setHeader(Exchange.CONTENT_TYPE, constant("application/json")).to("netty-http:http://52.117.213.242:8087/jpos/client?bindingMode=json");
        
 
-        from("rest://get:3echoGet/{echoValue}").process(new Processor() {
+        from("rest://get:3echoget/{echoValue}").process(new Processor() {
             @Override
             public void process(Exchange exchange) throws Exception {
                 System.out.println(exchange.getIn().getHeader("echoValue"));
